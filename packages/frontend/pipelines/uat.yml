@@ -1,0 +1,29 @@
+variables:
+- group: crm-internal-uat-onprom-services
+
+name: $(Build.SourceBranchName)-$(Date:yyyyMMdd)$(Rev:.r)
+
+pool:
+  name: aks-pool-frontend
+
+trigger:
+  paths:
+    include:
+      - packages/frontend/*
+  branches:
+    include:
+      - uat
+  tags:
+    exclude:
+      - '*'
+
+resources:
+  repositories:
+  - repository: plataforma
+    type: git
+    name: plataforma
+
+extends:
+  template: pipelines/frontend/static/frontend-static-cd-uat.yaml@plataforma
+  parameters:
+    tls_secret: $(TLS_SECRET)

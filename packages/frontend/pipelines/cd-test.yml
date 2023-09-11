@@ -1,0 +1,24 @@
+name: $(Build.SourceBranchName)-$(Date:yyyyMMdd)$(Rev:.r)
+
+pool:
+  name: aks-pool-frontend
+
+trigger:
+  paths:
+    include:
+      - packages/frontend/*
+  branches:
+    include:
+      - qa
+  tags:
+    exclude:
+      - '*'
+
+resources:
+  repositories:
+  - repository: plataforma
+    type: git
+    name: plataforma
+
+extends:
+  template: pipelines/frontend/static/frontend-static-cd-test.yaml@plataforma

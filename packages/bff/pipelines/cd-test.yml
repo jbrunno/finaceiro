@@ -1,0 +1,24 @@
+name: $(Date:yyyyMMdd)$(Rev:.r)
+
+pool:
+  name: aks-pool-frontend
+
+trigger:
+  paths:
+    include:
+      - packages/bff/*
+  branches:
+    include:
+      - qa
+  tags:
+    exclude:
+      - '*'
+
+resources:
+  repositories:
+    - repository: plataforma
+      type: git
+      name: plataforma
+
+extends:
+  template: pipelines/frontend/bff/frontend-bff-cd-qa.yaml@plataforma

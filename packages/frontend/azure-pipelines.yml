@@ -1,0 +1,186 @@
+trigger:
+  paths:
+    include:
+      - packages/frontend/*
+  branches:
+    include:
+      - develop
+      - qa
+      - uat
+  
+variables:
+  sourceBranch: '$(Build.SourceBranch)' 
+  sourceVersion: '$(Build.SourceVersion)'  
+  develop: dev
+  test: qa
+  uat: uat
+  producao: prod
+  dockerTag: $(Build.SourceVersion)
+  
+pool:
+  name: crm-aws-microfrontend
+
+stages:
+# - stage: Variables
+#   variables:
+#     - group: crm-internal-pepiline-services
+#     - name: pipe_address_folder
+#       value: $[variables.address_folder]
+#     - name: pipe_key_git
+#       value: $[variables.key_git]
+#     - name: pipe_protocol_address
+#       value: $[variables.protocol_address]
+
+#   jobs:
+#   - job: GenerateImageId
+#     steps:
+#     - script: |
+#         commitHash=dev-${sourceVersion:0:8}
+#         echo "##vso[task.setvariable variable=commitHash;isoutput=true]$commitHash"
+#       name: commitHash
+#       env: { sourceVersion: $(Build.SourceVersion) }
+#   - job: GenerateNameDockerImage
+#     steps:
+#     - script: |
+#         temp=$(Build.BuildId)
+#         commit=${temp:0:8}
+#         dockerImage=crm/frontend:$commit
+#         dockerFullImage=registrycrm.azurecr.io/$dockerImage
+#         echo "##vso[task.setvariable variable=dockerImage;isoutput=true]$dockerImage"
+#         echo "##vso[task.setvariable variable=dockerFullImage;isoutput=true]$dockerFullImage"
+#         echo "##vso[task.setvariable variable=dockerTag;isoutput=true]$commit"
+#         echo $dockerFullImage
+#       name: dockerImageName
+
+- stage: BuildAndDeploy
+  variables:
+    - group: crm-internal-pepiline-services
+    - name: tls_secret
+      value: $[variables.TLS_SECRET]
+    - group: crm-internal-pepiline-services
+    - name: pipe_address_folder
+      value: $[variables.address_folder]
+    - name: pipe_key_git
+      value: $[variables.key_git]
+    - name: pipe_protocol_address
+      value: $[variables.protocol_address]
+    - name: ECR_REPOSITORY
+      value: $(AWS_ACCOUNT_ID).dkr.ecr.$(AWS_REGION).amazonaws.com/$(Build.Repository.Name)-static       
+
+  jobs:
+  - job: Docker
+    variables:
+      dockerImage: $[ stageDependencies.Variables.GenerateNameDockerImage.outputs['dockerImageName.dockerFullImage'] ]
+      #dockerTag: $[ stageDependencies.Variables.GenerateNameDockerImage.outputs['dockerImageName.dockerTag'] ]
+    steps:
+    
+    - task: DockerInstaller@0
+      displayName: Install Docker
+      inputs:
+        dockerVersion: 17.09.0-ce
+        releaseType: stable
+
+    - script: |
+        python3 -m pip install awscli
+      displayName: 'Install AWS Cli'
+
+    - script: |
+        aws ecr get-login-password --region $(AWS_REGION) | docker login --username AWS --password-stdin $(AWS_ACCOUNT_ID).dkr.ecr.$(AWS_REGION).amazonaws.com
+      displayName: 'Login to AWS'
+      env:
+        AWS_ACCESS_KEY_ID: $(AWS_ACCESS_KEY_ID)
+        AWS_SECRET_ACCESS_KEY: $(AWS_SECRET_ACCESS_KEY_ID)
+
+    - task: Cache@2
+      displayName: Cache Yarn packages
+      inputs:
+        key: 'yarn  | "$(Agent.OS)" | yarn.lock | package.json | packages/frontend/package.json'
+        restoreKeys: 'yarn.lock | package.json | packages/frontend/package.json'
+        path: packages/frontend/node_modules
+        cacheHitVar: CACHE_RESTORED
+    
+    - task: CmdLine@2
+      displayName: '@crm/frontend: Instala as dependencias'
+      #condition: ne(variables.CACHE_RESTORED, 'true')
+      inputs:
+        script: yarn install
+    
+    - task: CmdLine@2
+      displayName: '@crm/frontend: Faz o build do frontend para a imagem docker'
+      inputs:
+        script: yarn build:$(Build.SourceBranchName)
+        workingDirectory: packages/frontend
+    
+    # - task: Docker@2
+    #   displayName: buildAndPush
+    #   inputs:
+    #     containerRegistry: 'acr-docker-registry'
+    #     command: 'buildAndPush'
+    #     Dockerfile: 'packages/frontend/Dockerfile'
+    #     repository: 'crm/frontend/login'
+    #     buildContext: '.'
+    #     tags: '$(dockerTag)'
+  
+    - task: Docker@2
+      displayName: Build and Push docker image
+      continueOnError: false      
+      inputs:
+        repository: $(ECR_REPOSITORY)
+        command: buildAndPush
+        Dockerfile: 'packages/frontend/Dockerfile'
+        tags: |
+          $(dockerTag)
+          $(Build.SourceBranchName)
+          latest    
+
+    - task: CmdLine@2
+      displayName: variavel Depoly Develop
+      condition: eq(variables['build.SourceBranchName'], 'develop')
+      continueOnError: false
+      inputs:
+        script: |
+          branchFix=$(develop)       
+          echo "ambiente: $(branchFix)"
+          echo "##vso[task.setvariable variable=branchFix]$branchFix"
+
+    - task: CmdLine@2
+      displayName: variavel Depoly  QA
+      condition: eq(variables['build.SourceBranchName'], 'test')
+      continueOnError: false
+      inputs:
+        script: |
+          branchFix=$(test)       
+          echo "ambiente: $(branchFix)"
+          echo "##vso[task.setvariable variable=branchFix]$branchFix"
+
+    - task: CmdLine@2
+      displayName: variavel Depoly UAT
+      condition: eq(variables['build.SourceBranchName'], 'uat')
+      continueOnError: false
+      inputs:
+        script: |
+          branchFix=$(uat)       
+          echo "ambiente: $(branchFix)"
+          echo "##vso[task.setvariable variable=branchFix]$branchFix"
+    - task: CmdLine@2
+      displayName: Deploy $(branchFix)
+      continueOnError: false
+      inputs:
+        script: |
+          echo "image: $(dockerTag)"
+          echo "ambiente: $(branchFix)"
+          #echo "var_pepiline_pipe_protocol_address: $(variables.pipe_protocol_address)"
+          #echo "var_pepiline_pipe_key_git: $(variables.pipe_key_git)"
+          echo "var_pepiline_address_folder: $(variables.pipe_address_folder)"
+          #echo "cd infrastructure-as-code/ms-config-deploy/$(branchFix)/frontend-static-login/patch"                    
+          git config --global user.email "crm.devops@paschoalotto.onmicrosoft.com"
+          git config --global user.name "crm.devops"          
+          cd ../../          
+          rm -rf infrastructure-as-code
+          #git clone https://paschoalotto:ggvyt7hy3c6qzdxuu7mq4aqhbpewu6rqlhld2cj27fvhruhzvk2a@dev.azure.com/paschoalotto/CRM/_git/infrastructure-as-code
+          git clone $(pipe_protocol_address)$(pipe_key_git)$(pipe_address_folder)          
+          cd infrastructure-as-code/ms-config-deploy/$(branchFix)/frontend-static-cobranca/patch
+          sed -i 's/newTag:.*/newTag'":"' '"$(dockerTag)"'/' kustomization.yaml
+          git add -A          
+          git commit -m "update image tag :$(dockerTag)"
+          git push origin main

@@ -1,0 +1,635 @@
+input AssinarTituloPostInput {
+  clientMutationId: ID
+  id: String!
+  senhaSupervisor: String!
+  usuarioSupervisor: String!
+}
+
+type AssinarTituloPostPayload {
+  clientMutationId: ID
+  id: String!
+}
+
+type Carteiras {
+  codigo: String!
+  dataAlteracao: Date!
+  id: ID!
+  idUsuarioAlteracao: String!
+  idUsuarioCriacao: String!
+  nome: String!
+}
+
+type Cbo {
+  codigo: Int!
+  id: ID!
+  ocupacao: String!
+}
+
+type CboItem {
+  cursor: ID!
+  node: Cbo!
+}
+
+type CboPageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  pageNumber: Int!
+  pageSize: Int!
+  totalItems: Int!
+}
+
+type CboPagination {
+  items: [CboItem!]!
+  pageInfo: CboPageInfo!
+}
+
+type Cliente {
+  cbo: Cbo
+  dataNascimento: String
+  documento: String
+  falecido: Boolean!
+  id: ID!
+  negativado: Boolean!
+  nome: String!
+  nomeSocial: String
+  sexo: ClienteSexo
+  tipo: ClienteTipo!
+}
+
+input ClienteContatoEmailPostInput {
+  classificacao: ContatoClassificacao!
+  clientMutationId: ID
+  email: String!
+  id: String!
+  marcador: ContatoMarcador
+  nome: String!
+}
+
+type ClienteContatoEmailPostPayload {
+  classificacao: ContatoClassificacao!
+  clientMutationId: ID
+  email: String!
+  id: String!
+  marcador: ContatoMarcador
+  nome: String!
+}
+
+input ClienteContatoEnderecoPostInput {
+  bairro: String!
+  cep: String!
+  cidade: String!
+  classificacao: ContatoClassificacao!
+  clientMutationId: ID
+  complemento: String
+  id: String!
+  logradouro: String!
+  marcador: ContatoMarcador
+  nome: String!
+  numero: String!
+  paisId: String
+  uf: String!
+}
+
+type ClienteContatoEnderecoPostPayload {
+  bairro: String!
+  cep: String!
+  cidade: String!
+  classificacao: ContatoClassificacao!
+  clientMutationId: ID
+  complemento: String
+  id: String!
+  logradouro: String!
+  marcador: ContatoMarcador
+  nome: String!
+  numero: String!
+  paisId: String
+  uf: String!
+}
+
+input ClienteContatoTelefonePostInput {
+  classificacao: ContatoClassificacao!
+  clientMutationId: ID
+  id: String!
+  marcador: ContatoMarcador!
+  nome: String!
+  numero: String!
+  whatsapp: Boolean!
+}
+
+type ClienteContatoTelefonePostPayload {
+  clientMutationId: ID
+  telefone: ContatoTelefone!
+}
+
+type ClienteItem {
+  cursor: ID!
+  node: Cliente!
+}
+
+type ClientePageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  pageNumber: Int!
+  pageSize: Int!
+  totalItems: Int!
+}
+
+type ClientePagination {
+  items: [ClienteItem!]!
+  pageInfo: ClientePageInfo!
+}
+
+input ClientePatchInput {
+  cboId: String
+  clientMutationId: ID
+  dataNascimento: String
+  documento: String
+  falecido: Boolean
+  id: String
+  negativado: Boolean
+  nome: String
+  nomeSocial: String
+  sexo: ClienteSexo
+  tipoCliente: ClienteTipo
+}
+
+type ClientePatchPayload {
+  clientMutationId: ID
+  cliente: Cliente!
+}
+
+input ClientePostInput {
+  clientMutationId: ID
+  documento: String
+  nome: String!
+  telefone: String!
+  tipoCliente: ClienteTipo!
+}
+
+type ClientePostPayload {
+  clientMutationId: ID
+  id: String!
+}
+
+enum ClienteSexo {
+  FEMININO
+  MASCULINO
+}
+
+enum ClienteTipo {
+  ESTRANGEIRA
+  FISICA
+  INDEFINIDO
+  JURIDICA
+}
+
+interface Contato {
+  classificacao: ContatoClassificacao!
+  id: String!
+  marcador: ContatoMarcador
+  nome: String!
+}
+
+enum ContatoClassificacao {
+  BOM
+  EXCELENTE
+  INDEFINIDO
+  RUIM
+}
+
+type ContatoEmail implements Contato {
+  classificacao: ContatoClassificacao!
+  email: String!
+  id: String!
+  marcador: ContatoMarcador
+  nome: String!
+}
+
+type ContatoEmailItem {
+  cursor: ID!
+  node: ContatoEmail!
+}
+
+type ContatoEmailPageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  pageNumber: Int!
+  pageSize: Int!
+  totalItems: Int!
+}
+
+type ContatoEmailPagination {
+  items: [ContatoEmailItem!]!
+  pageInfo: ContatoEmailPageInfo!
+}
+
+type ContatoEndereco implements Contato {
+  bairro: String!
+  cep: String!
+  cidade: String!
+  classificacao: ContatoClassificacao!
+  complemento: String
+  id: String!
+  logradouro: String!
+  marcador: ContatoMarcador
+  nome: String!
+  numero: String!
+  pais: Pais
+  uf: String
+}
+
+type ContatoEnderecoItem {
+  cursor: ID!
+  node: ContatoEndereco!
+}
+
+type ContatoEnderecoPageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  pageNumber: Int!
+  pageSize: Int!
+  totalItems: Int!
+}
+
+type ContatoEnderecoPagination {
+  items: [ContatoEnderecoItem!]!
+  pageInfo: ContatoEnderecoPageInfo!
+}
+
+enum ContatoMarcador {
+  AVOS
+  FILHO
+  MAE
+  NETO
+  PAI
+  PESSOAL
+  SOBRINHO
+  TIO
+  TRABALHO
+}
+
+type ContatoTelefone implements Contato {
+  classificacao: ContatoClassificacao!
+  id: String!
+  marcador: ContatoMarcador
+  nome: String!
+  numero: String!
+  tipo: ContatoTipoTelefone!
+  whatsapp: Boolean!
+}
+
+type ContatoTelefoneItem {
+  cursor: ID!
+  node: ContatoTelefone!
+}
+
+type ContatoTelefonePageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  pageNumber: Int!
+  pageSize: Int!
+  totalItems: Int!
+}
+
+type ContatoTelefonePagination {
+  items: [ContatoTelefoneItem!]!
+  pageInfo: ContatoTelefonePageInfo!
+}
+
+enum ContatoTipoTelefone {
+  CELULAR
+  FIXO
+}
+
+scalar Date
+
+scalar DateOnly
+
+input EditarAssinaturaTituloInput {
+  clientMutationId: ID
+  id: String!
+  motivo: String!
+  senhaSupervisor: String!
+  usuarioSupervisor: String!
+}
+
+type EditarAssinaturaTituloPayload {
+  clientMutationId: ID
+  id: String!
+}
+
+input EmailPatchInput {
+  classificacao: ContatoClassificacao!
+  clientMutationId: ID
+  id: String!
+  marcador: ContatoMarcador!
+  nome: String!
+}
+
+type EmailPatchPayload {
+  classificacao: ContatoClassificacao!
+  clientMutationId: ID
+  marcador: ContatoMarcador!
+  nome: String!
+}
+
+input EnderecoPatchInput {
+  classificacao: ContatoClassificacao!
+  clientMutationId: ID
+  id: String!
+  marcador: ContatoMarcador
+  nome: String!
+}
+
+type EnderecoPatchPayload {
+  classificacao: ContatoClassificacao!
+  clientMutationId: ID
+  id: String!
+  marcador: ContatoMarcador
+  nome: String!
+}
+
+type Equipes {
+  dataCriacao: Date!
+  id: ID!
+  idUsuarioAlteracao: String!
+  idUsuarioCriacao: String!
+  nome: String!
+}
+
+type FollowUp {
+  dataRegistro: String!
+  descricao: String!
+  id: ID!
+  situacao: Situacao
+  usuario: UsuarioById
+}
+
+type FollowUpItem {
+  cursor: ID!
+  node: FollowUp!
+}
+
+type FollowUpPageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  pageNumber: Int!
+  pageSize: Int!
+  totalItems: Int!
+}
+
+type FollowUpPagination {
+  items: [FollowUpItem!]!
+  pageInfo: FollowUpPageInfo!
+}
+
+type Icm {
+  porcentagemEntrada: Float!
+  porcentagemParcelasPagas: Float!
+  porcentagemTotal: Float!
+  valorEntrada: Float!
+  valorParcelasPagas: Float!
+}
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON
+
+"""
+The `JSONObject` scalar type represents JSON objects as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSONObject
+
+type Mutation {
+  assinarTituloPost(input: AssinarTituloPostInput!): AssinarTituloPostPayload!
+  clienteContatoEmailPost(input: ClienteContatoEmailPostInput!): ClienteContatoEmailPostPayload!
+  clienteContatoEnderecoPost(input: ClienteContatoEnderecoPostInput!): ClienteContatoEnderecoPostPayload!
+  clienteContatoTelefonePost(input: ClienteContatoTelefonePostInput!): ClienteContatoTelefonePostPayload!
+  clientePatch(input: ClientePatchInput!): ClientePatchPayload!
+  clientePost(input: ClientePostInput!): ClientePostPayload!
+  editarAssinaturaTitulo(input: EditarAssinaturaTituloInput!): EditarAssinaturaTituloPayload!
+  emailPatch(input: EmailPatchInput!): EmailPatchPayload!
+  enderecoPatch(input: EnderecoPatchInput!): EnderecoPatchPayload!
+  registrarClienteFollowUp(input: RegistrarClienteFollowUpInput!): RegistrarClienteFollowUpPayload!
+  telefonePatch(input: TelefonePatchInput!): TelefonePatchPayload!
+  tituloPatch(input: TituloPatchInput!): TituloPatchPayload!
+  tituloPost(input: TituloPostInput!): TituloPostPayload!
+}
+
+input PaginationInput {
+  pageNumber: Int
+  pageSize: Int
+  sortField: String
+  sortOrder: String
+}
+
+type Pais {
+  descricao: String!
+  id: ID!
+}
+
+type ProducaoAcordos {
+  porcentagemConversao: Float!
+  quantidadeParcelasVencer: Float!
+  quantidadeTotalAcordos: Float!
+  valorTotalAcordos: Float!
+}
+
+type ProducaoAcordosComparativo {
+  data: Date!
+  quantidadeIndividual: Float!
+  quantidadeMedia: Float!
+}
+
+type ProducaoAcordosSintetizado {
+  acordosEPromessasDePagamento: Float!
+  quantidadeAcordosPagos: Float!
+  quantidadeAcordosQuebrados: Float!
+  quantidadeParcelasAVencer: Float!
+  valorTotalAcordosGerados: Float!
+  valorTotalAcordosPagos: Float!
+}
+
+type Query {
+  cbos(filter: String, pagination: PaginationInput!): CboPagination!
+  cliente(id: String!): Cliente!
+  clientes(keyword: String!, pagination: PaginationInput!): ClientePagination!
+  emails(email: String, id: String!, pagination: PaginationInput!): ContatoEmailPagination!
+  enderecos(id: String!, pagination: PaginationInput!): ContatoEnderecoPagination!
+  followUps(id: String!, pagination: PaginationInput!): FollowUpPagination!
+  icm: Icm!
+  pais(id: String!): Pais!
+  paises: [Pais!]!
+  producaoAcordos: ProducaoAcordos!
+  producaoAcordosComparativo: [ProducaoAcordosComparativo!]!
+  producaoAcordosSintetizado(date: Date!): ProducaoAcordosSintetizado!
+  situacoesFollowUp(keyword: String, pagination: PaginationInput!): SituacaoPagination!
+  telefones(id: String!, numero: String, pagination: PaginationInput!): ContatoTelefonePagination!
+  titulo(id: String!): Titulo!
+  titulos(id: String!): TituloPagination!
+  usuarioById(id: ID!): UsuarioById!
+  usuarios(pagination: PaginationInput!): UsuariosPagination!
+}
+
+input RegistrarClienteFollowUpInput {
+  clientMutationId: ID
+  clienteId: String!
+  descricao: String
+  situacaoFollowUpId: String!
+  tituloId: String!
+}
+
+type RegistrarClienteFollowUpPayload {
+  clientMutationId: ID
+  id: String!
+}
+
+type Situacao {
+  codigo: Int!
+  descricaoObrigatoria: Boolean!
+  id: ID!
+  nome: String!
+  tempoTrava: Int!
+  textoPadrao: String!
+}
+
+type SituacaoItem {
+  cursor: ID!
+  node: Situacao!
+}
+
+type SituacaoPageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  pageNumber: Int!
+  pageSize: Int!
+  totalItems: Int!
+}
+
+type SituacaoPagination {
+  items: [SituacaoItem!]!
+  pageInfo: SituacaoPageInfo!
+}
+
+input TelefonePatchInput {
+  classificacao: ContatoClassificacao!
+  clientMutationId: ID
+  id: String!
+  marcador: ContatoMarcador!
+  nome: String!
+  whatsapp: Boolean!
+}
+
+type TelefonePatchPayload {
+  classificacao: ContatoClassificacao!
+  clientMutationId: ID
+  marcador: ContatoMarcador!
+  nome: String!
+  whatsapp: Boolean!
+}
+
+type Titulo {
+  assinatura: Boolean!
+  id: ID!
+  tituloQuestionario: TituloQuestionario!
+}
+
+type TituloItem {
+  cursor: ID!
+  node: Titulo!
+}
+
+type TituloPageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  pageNumber: Int!
+  pageSize: Int!
+  totalItems: Int!
+}
+
+type TituloPagination {
+  items: [TituloItem!]!
+  pageInfo: TituloPageInfo!
+}
+
+input TituloPatchInput {
+  clientMutationId: ID
+  contaAnteriorFalencia: Boolean!
+  id: String!
+  observacao: String
+  siteRegistro: String
+  tipoAtivoInvestido: String
+  tipoConta: String
+  valorDepositos: String
+}
+
+type TituloPatchPayload {
+  clientMutationId: ID
+  id: String!
+}
+
+input TituloPostInput {
+  clientMutationId: ID
+  contaAnteriorFalencia: Boolean!
+  id: String!
+  observacao: String
+  siteRegistro: String
+  tipoAtivoInvestido: String
+  tipoConta: String
+  valorDepositos: String
+}
+
+type TituloPostPayload {
+  clientMutationId: ID
+  id: String!
+}
+
+type TituloQuestionario {
+  contaAnteriorFalencia: Boolean!
+  observacao: String
+  siteRegistro: String
+  tipoAtivoInvestido: String
+  tipoConta: String
+  valorDepositos: String
+}
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload
+
+type UsuarioById {
+  cargaHoraria: String!
+  id: ID!
+  nome: String!
+  turno: Int!
+  username: String!
+}
+
+type Usuarios {
+  cargaHoraria: String!
+  cargo: String!
+  carteiras: [Carteiras!]!
+  equipes: [Equipes!]!
+  id: ID!
+  nome: String!
+  turno: String!
+  username: String!
+}
+
+type UsuariosItem {
+  cursor: ID!
+  node: Usuarios!
+}
+
+type UsuariosPageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  pageNumber: Int!
+  pageSize: Int!
+  totalItems: Int!
+}
+
+type UsuariosPagination {
+  items: [UsuariosItem!]!
+  pageInfo: UsuariosPageInfo!
+}

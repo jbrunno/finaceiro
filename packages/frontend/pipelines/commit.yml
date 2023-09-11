@@ -1,0 +1,24 @@
+name: $(Build.SourceBranchName)-$(Date:yyyyMMdd)$(Rev:.r)
+
+trigger: none
+#   paths:
+#     include:
+#       - packages/frontend/*
+#   branches:
+#     exclude:
+#       - main
+#   tags:
+#     exclude:
+#       - '*'
+
+pool:
+  name: aks-pool-frontend
+
+resources:
+  repositories:
+  - repository: plataforma
+    type: git
+    name: plataforma
+
+extends:
+  template: pipelines/frontend/static/frontend-static-ci-commit.yaml@plataforma

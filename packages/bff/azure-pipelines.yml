@@ -1,0 +1,201 @@
+# frontend-operacao-bff
+trigger:
+    paths:
+      include:
+        - packages/bff/*
+    branches:
+      include:
+        - develop
+        - qa
+        - uat      
+    tags:
+      exclude:
+        - '*'
+    
+variables:
+  sourceBranch: '$(Build.SourceBranch)' 
+  sourceVersion: '$(Build.SourceVersion)'  
+  develop: dev
+  test: qa
+  uat: uat
+  producao: prod
+  dockerTag: $(Build.SourceVersion)
+  
+pool:
+  name: crm-aws-microfrontend
+   
+stages:
+  # - stage: Variables
+  #   jobs:
+  #   # - job: sonar
+  #   #   steps:
+  #   #   - checkout: self
+  #   #     fetchDepth: 0
+  #   #   - task: SonarCloudPrepare@1
+  #   #     inputs:
+  #   #       SonarCloud: 'SonarCloud-CRM'
+  #   #       organization: 'paschoalotto'
+  #   #       scannerMode: 'CLI'
+  #   #       configMode: 'manual'
+  #   #       cliProjectKey: 'Paschoalotto_frontend-cobranca'
+  #   #       cliProjectName: 'frontend-cobranca'
+  #   #       cliSources: '.'
+  #   #   - task: SonarCloudAnalyze@1
+  #   #   - task: SonarCloudPublish@1
+  #   #     inputs:
+  #   #       pollingTimeoutSec: '300'
+    
+  #   - job: GenerateImageId
+  #     steps:
+  #     - script: |
+  #         commitHash=dev-${sourceVersion:0:8}
+  #         echo "##vso[task.setvariable variable=commitHash;isoutput=true]$commitHash"
+  #       name: commitHash
+  #       env: { sourceVersion: $(Build.SourceVersion) }
+  #   - job: GenerateNameDockerImage
+  #     steps:
+  #     - script: |
+  #         temp=$(Build.BuildId)
+  #         commit=${temp:0:8}
+  #         dockerImage=crm/frontend-bff-cobranca:$commit
+  #         dockerFullImage=registrycrm.azurecr.io/$dockerImage
+  #         echo "##vso[task.setvariable variable=dockerImage;isoutput=true]$dockerImage"
+  #         echo "##vso[task.setvariable variable=dockerFullImage;isoutput=true]$dockerFullImage"
+  #         echo "##vso[task.setvariable variable=dockerTag;isoutput=true]$commit"
+  #         echo $dockerFullImage
+  #       name: dockerImageName
+  
+  - stage: BuildAndDeploy
+    variables:
+      - group: crm-internal-pepiline-services
+      - name: tls_secret
+        value: $[variables.TLS_SECRET]
+      - group: crm-internal-pepiline-services
+      - name: pipe_address_folder
+        value: $[variables.address_folder]
+      - name: pipe_key_git
+        value: $[variables.key_git]
+      - name: pipe_protocol_address
+        value: $[variables.protocol_address]
+      - name: ECR_REPOSITORY
+        value: $(AWS_ACCOUNT_ID).dkr.ecr.$(AWS_REGION).amazonaws.com/$(Build.Repository.Name)-bff        
+  
+    jobs:
+    - job: Docker
+      variables:
+        dockerImage: $[ stageDependencies.Variables.GenerateNameDockerImage.outputs['dockerImageName.dockerFullImage'] ]
+        #dockerTag: $[ stageDependencies.Variables.GenerateNameDockerImage.outputs['dockerImageName.dockerTag'] ]
+      steps:
+
+      - script: |
+          python3 -m pip install awscli
+        displayName: 'Install AWS Cli'
+     
+      - script: |
+          echo $(AWS_REGION)
+          aws ecr get-login-password --region $(AWS_REGION) | docker login --username AWS --password-stdin $(AWS_ACCOUNT_ID).dkr.ecr.$(AWS_REGION).amazonaws.com
+        displayName: 'Login to AWS'
+        env:
+          AWS_ACCESS_KEY_ID: $(AWS_ACCESS_KEY_ID)
+          AWS_SECRET_ACCESS_KEY: $(AWS_SECRET_ACCESS_KEY_ID) 
+
+      # - task: Cache@2
+      #   displayName: Cache Yarn packages
+      #   inputs:
+      #     key: 'yarn | "$(Agent.OS)" | yarn.lock | package.json | packages/bff/package.json'
+      #     restoreKeys: 'yarn.lock | package.json | packages/bff/package.json'
+      #     path: packages/bff/node_modules
+      #     cacheHitVar: CACHE_RESTORED
+
+      # - task: CmdLine@2
+      #   displayName: 'Instala as dependencias'
+      #   condition: ne(variables.CACHE_RESTORED, 'true')
+      #   inputs:
+      #     script: yarn install
+
+      # - task: CmdLine@2
+      #   displayName: 'Faz o build do frontend para a imagem docker'
+      #   inputs:
+      #     script: yarn build:uat
+      #     workingDirectory: packages/bff
+
+
+      - script: |
+          docker build --no-cache --build-arg AMBIENTE=$(Build.SourceBranchName) -t $(ECR_REPOSITORY):$(dockerTag) -t $(ECR_REPOSITORY):$(Build.SourceBranchName) -t $(ECR_REPOSITORY):latest -f packages/bff/Dockerfile .
+        displayName: 'Build Docker Image'
+        
+      - task: Docker@2
+        displayName: Push Docker Image
+        continueOnError: false      
+        inputs:
+          repository: $(ECR_REPOSITORY)
+          command: Push
+          tags: |
+            $(dockerTag)
+            $(Build.SourceBranchName)
+            latest  
+
+      # - task: Docker@2
+      #   displayName: buildAndPush
+      #   inputs:
+      #     containerRegistry: 'acr-docker-registry'
+      #     command: 'buildAndPush'
+      #     Dockerfile: 'packages/bff/Dockerfile'
+      #     repository: 'crm/frontend/bff-cobranca'
+      #     buildContext: '.'
+      #     tags: '$(dockerTag)'
+  
+      - task: CmdLine@2
+        displayName: variavel Depoly Develop
+        condition: eq(variables['build.SourceBranchName'], 'develop')
+        continueOnError: false
+        inputs:
+          script: |
+            branchFix=$(develop)       
+            echo "ambiente: $(branchFix)"
+            echo "##vso[task.setvariable variable=branchFix]$branchFix"
+  
+      - task: CmdLine@2
+        displayName: variavel Depoly  QA
+        condition: eq(variables['build.SourceBranchName'], 'qa')
+        continueOnError: false
+        inputs:
+          script: |
+            branchFix=$(qa)       
+            echo "ambiente: $(branchFix)"
+            echo "##vso[task.setvariable variable=branchFix]$branchFix"
+  
+      - task: CmdLine@2
+        displayName: variavel Depoly UAT
+        condition: eq(variables['build.SourceBranchName'], 'uat')
+        continueOnError: false
+        inputs:
+          script: |
+            branchFix=$(uat)       
+            echo "ambiente: $(branchFix)"
+            echo "##vso[task.setvariable variable=branchFix]$branchFix"
+  
+      - task: CmdLine@2
+        displayName: Deploy $(branchFix)
+        #condition: eq(variables['build.SourceBranchName'], 'develop2')
+        continueOnError: false
+        inputs:
+          script: |
+            echo "image: $(dockerTag)"
+            echo "ambiente: $(branchFix)"
+            #echo "var_pepiline_pipe_protocol_address: $(variables.pipe_protocol_address)"
+            #echo "var_pepiline_pipe_key_git: $(variables.pipe_key_git)"
+            #echo "var_pepiline_address_folder: $(variables.pipe_address_folder)"
+            #echo "cd infrastructure-as-code/ms-config-deploy/$(branchFix)/frontend-bff-cobranca/patch"                    
+            git config --global user.email "crm.devops@paschoalotto.onmicrosoft.com"
+            git config --global user.name "crm.devops"          
+            cd ../../          
+            rm -rf infrastructure-as-code
+            git clone https://paschoalotto:ggvyt7hy3c6qzdxuu7mq4aqhbpewu6rqlhld2cj27fvhruhzvk2a@dev.azure.com/paschoalotto/CRM/_git/infrastructure-as-code
+            ls
+            #git clone $(pipe_protocol_address)$(pipe_key_git)$(pipe_address_folder)          
+            cd infrastructure-as-code/ms-config-deploy/$(branchFix)/frontend-bff-cobranca/patch
+            sed -i 's/newTag:.*/newTag'":"' '"$(dockerTag)"'/' kustomization.yaml
+            git add -A          
+            git commit -m "update image tag :$(dockerTag)"
+            git push origin main

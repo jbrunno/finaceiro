@@ -1,0 +1,25 @@
+name: $(Build.SourceBranchName)-$(Date:yyyyMMdd)$(Rev:.r)
+
+trigger:
+  paths:
+    include:
+      - packages/bff/*
+      
+  branches:
+    exclude:
+      - main
+  tags:
+    exclude:
+      - '*'
+
+pool:
+  name: aks-pool-frontend
+
+resources:
+  repositories:
+  - repository: plataforma
+    type: git
+    name: plataforma
+
+extends:
+  template: pipelines/frontend/bff/frontend-bff-ci-commit.yaml@plataforma

@@ -1,0 +1,156 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "airbnb",
+    "prettier",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "jest",
+    "import",
+    "unused-imports",
+    "prettier"
+  ],
+  "ignorePatterns": ["**/node_modules/*"],
+  "rules": {
+    "camelcase": "off",
+    "import/no-unresolved": ["error", { "ignore": ["login/Shell"] }],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "default",
+        "format": ["camelCase"],
+        "leadingUnderscore": "allowSingleOrDouble",
+        "trailingUnderscore": "allowSingleOrDouble"
+      },
+      {
+        "selector": [
+          "variable",
+          "enumMember",
+          "typeProperty",
+          "objectLiteralProperty",
+          "parameter"
+        ],
+        "format": ["camelCase", "PascalCase", "UPPER_CASE"],
+        "leadingUnderscore": "allowSingleOrDouble",
+        "trailingUnderscore": "allowSingleOrDouble"
+      },
+      {
+        "selector": "typeLike",
+        "format": ["PascalCase"]
+      },
+      {
+        "selector": "enum",
+        "format": ["PascalCase", "UPPER_CASE"]
+      },
+      {
+        "selector": "function",
+        "format": ["camelCase", "PascalCase"]
+      },
+      {
+        "selector": ["objectLiteralProperty", "typeProperty"],
+        "format": null,
+        "modifiers": ["requiresQuotes"]
+      }
+    ],
+    "react/function-component-definition": [
+      "error",
+      {
+        "namedComponents": "function-declaration",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "react/no-typos": "off",
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "class-methods-use-this": "off",
+    "import/prefer-default-export": "off",
+    "react/require-default-props": "off",
+    "react/jsx-props-no-spreading": "off",
+    "no-useless-constructor": "off",
+    "no-empty-function": "off",
+    "no-shadow": "off",
+    "no-underscore-dangle": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-shadow": "warn",
+    "@typescript-eslint/no-empty-interface": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/ban-types": "off",
+    "implicit-arrow-linebreak": "off",
+    "lines-between-class-members": "off",
+    "prefer-promise-reject-errors": "warn",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/test/**",
+          "**/*.test.ts",
+          "**/*.mock.ts",
+          "**/*.spec.ts"
+        ]
+      }
+    ],
+    "prettier/prettier": ["error", { "endOfLine": "auto" }],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".jsx", ".tsx"]
+      }
+    ],
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": [
+      "error",
+      {
+        "functions": false,
+        "variables": false,
+        "enums": false,
+        "classes": true
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*stories.tsx"],
+      "rules": {
+        "react/function-component-definition": "off",
+        "react/destructuring-assignment": "off"
+      }
+    }
+  ],
+  "settings": {
+    "import/resolver": {
+      "typescript": {},
+      "jest": {
+        "jestConfigFile": "./jest.config.js"
+      }
+    }
+  },
+  "globals": {
+    "JSX": "readonly"
+  }
+}

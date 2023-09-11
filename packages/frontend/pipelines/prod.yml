@@ -1,0 +1,20 @@
+variables:
+- group: crm-internal-prod-services
+
+name: $(Build.SourceBranchName)-$(Date:yyyyMMdd)$(Rev:.r)
+
+pool:
+  name: aks-pool-frontend
+
+trigger: none
+
+resources:
+  repositories:
+  - repository: plataforma
+    type: git
+    name: plataforma
+
+extends:
+  template: pipelines/frontend/static/frontend-static-cd-prod.yaml@plataforma
+  parameters:
+    tls_secret: $(TLS_SECRET)

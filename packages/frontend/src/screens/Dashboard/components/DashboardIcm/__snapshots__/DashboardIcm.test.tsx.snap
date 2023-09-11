@@ -1,0 +1,364 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render DashboardIcm 1`] = `
+.emotion-3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  grid-template-areas: 'content avatar action';
+  padding: 0.5rem 0rem;
+}
+
+.emotion-3 .MuiCardHeader-content {
+  grid-area: content;
+}
+
+.emotion-3 .MuiCardHeader-avatar {
+  margin-right: 0;
+  margin-left: 0.5rem;
+  grid-area: avatar;
+}
+
+.emotion-3 .MuiCardHeader-avatar>div {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-3 .MuiCardHeader-action {
+  grid-area: action;
+  margin: auto;
+}
+
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin-right: 16px;
+}
+
+.emotion-5 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  font-size: 1.5rem;
+}
+
+.emotion-6 {
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.emotion-7 {
+  margin: 0;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  letter-spacing: 0.0094rem;
+  font-family: Lato,sans-serif;
+  display: block;
+}
+
+.emotion-8 {
+  display: grid;
+  -webkit-column-gap: 0.25rem;
+  column-gap: 0.25rem;
+  white-space: nowrap;
+  grid-template-columns: auto 1fr;
+  -webkit-align-items: baseline;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+}
+
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-column-gap: 0.25rem;
+  column-gap: 0.25rem;
+}
+
+.emotion-14 {
+  background-color: #fff;
+  color: #3B3B41DE;
+  -webkit-transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-radius: 4px;
+  box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
+  overflow: hidden;
+  overflow: visible;
+  border-radius: 0.5rem;
+  box-shadow: 0px 2px 4px -1px rgba(233, 233, 233, 0.8),0px 4px 5px rgba(233, 233, 233, 0.14),0px 1px 10px rgba(233, 233, 233, 0.12);
+  background-color: #fff;
+  height: calc(10.674999999999999rem + 73.2px);
+  background-color: #fafafa;
+}
+
+.emotion-16 {
+  padding: 16px;
+  padding: 0.5rem;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-auto-rows: 1fr;
+  gap: 0.25rem;
+  height: 100%;
+}
+
+.emotion-16:last-child {
+  padding-bottom: 24px;
+}
+
+.emotion-16:last-child {
+  padding-bottom: 0.5rem;
+}
+
+.emotion-17 {
+  display: grid;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 4px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #fff;
+  grid-column: span 2;
+  justify-items: center;
+}
+
+.emotion-19 {
+  padding: 0.5rem;
+}
+
+.emotion-22 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  font-size: 1.5rem;
+  color: #2196F3;
+  fill: #0b79d0;
+  font-size: calc(4.375rem + 30px);
+}
+
+.emotion-25 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.8125rem;
+  letter-spacing: 0;
+  font-family: Lato,sans-serif;
+}
+
+.emotion-26 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.0094rem;
+  font-family: Lato,sans-serif;
+  color: #3B3B4199;
+}
+
+.emotion-27 {
+  display: grid;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 4px;
+  background-color: #fff;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-33 {
+  margin: 0;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  letter-spacing: 0.0094rem;
+  font-family: Lato,sans-serif;
+}
+
+<div>
+  <div
+    class="MuiBox-root emotion-0"
+  >
+    <div
+      class="MuiCardHeader-root emotion-1 emotion-2 emotion-3"
+    >
+      <div
+        class="MuiCardHeader-avatar emotion-4"
+      >
+        <div
+          aria-label="ICM: Indice Cumprimento de Meta"
+          class=""
+          data-mui-internal-clone-element="true"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium emotion-5"
+            data-testid="HelpOutlineIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="MuiCardHeader-content emotion-6"
+      >
+        <span
+          class="MuiTypography-root MuiTypography-body2 MuiCardHeader-title emotion-7"
+        >
+          <div
+            class="emotion-8 emotion-9"
+          >
+            <div
+              class="emotion-10 emotion-11"
+            >
+              ICM
+            </div>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root emotion-12 emotion-13 emotion-14"
+    >
+      <div
+        class="MuiCardContent-root emotion-15 emotion-16"
+      >
+        <div
+          class="emotion-17 emotion-18"
+        >
+          <div
+            class="emotion-19 emotion-20"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-colorInfo MuiSvgIcon-fontSizeMedium emotion-21 emotion-22"
+              data-testid="TrendingUpSharpIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m16 6 2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6h-6z"
+              />
+            </svg>
+          </div>
+          <div
+            class="emotion-19 emotion-20"
+          >
+            <h3
+              class="MuiTypography-root MuiTypography-h3 emotion-25"
+            >
+              50%
+            </h3>
+            <h6
+              class="MuiTypography-root MuiTypography-subtitle1 emotion-26"
+            >
+              ICM
+            </h6>
+          </div>
+        </div>
+        <div
+          class="emotion-27 emotion-28"
+        >
+          <div
+            class="emotion-19 emotion-20"
+          >
+            <h3
+              class="MuiTypography-root MuiTypography-h3 emotion-25"
+            >
+              1%
+            </h3>
+            <h6
+              class="MuiTypography-root MuiTypography-subtitle1 emotion-26"
+            >
+              Entrada / À Vista
+            </h6>
+            <p
+              class="MuiTypography-root MuiTypography-body2 emotion-33"
+            >
+              R$ 50,00
+            </p>
+          </div>
+        </div>
+        <div
+          class="emotion-27 emotion-28"
+        >
+          <div
+            class="emotion-19 emotion-20"
+          >
+            <h3
+              class="MuiTypography-root MuiTypography-h3 emotion-25"
+            >
+              R$ 3,00
+            </h3>
+            <h6
+              class="MuiTypography-root MuiTypography-subtitle1 emotion-26"
+            >
+              Parcelas pagas
+            </h6>
+            <p
+              class="MuiTypography-root MuiTypography-body2 emotion-33"
+            >
+              Eficiência de 80%
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

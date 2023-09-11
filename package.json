@@ -1,0 +1,42 @@
+{
+  "name": "operacao",
+  "repository": "https://paschoalotto@dev.azure.com/paschoalotto/CRM/_git/frontend-operacao",
+  "private": true,
+  "engines": {
+    "node": ">=18.0.0 <19.0.0"
+  },
+  "scripts": {
+    "start": "concurrently \"yarn workspace @operacao/bff start\" \"yarn workspace @operacao/frontend start\"",
+    "start:bff": "yarn workspace @operacao/bff start",
+    "start:frontend": "yarn workspace @operacao/frontend start",
+    "lint": "yarn workspaces run lint",
+    "lint:fix": "yarn workspaces run lint --fix",
+    "lint:bff": "yarn workspace @operacao/bff lint",
+    "lint:frontend": "yarn workspace @operacao/frontend lint",
+    "test": "yarn workspaces run test",
+    "test:bff": "yarn workspace @operacao/bff test",
+    "test:frontend": "yarn workspace @operacao/frontend test",
+    "clean": "rimraf node_modules **/node_modules",
+    "commit": "git-cz",
+    "prepare": "husky install"
+  },
+  "workspaces": {
+    "nohoist": [
+      "@operacao/frontend/**",
+      "@operacao/bff/**"
+    ],
+    "packages": [
+      "packages/frontend",
+      "packages/bff"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.2",
+    "@commitlint/config-conventional": "^17.0.2",
+    "commitizen": "^4.2.4",
+    "concurrently": "^7.2.2",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^8.0.1",
+    "rimraf": "^3.0.2"
+  }
+}

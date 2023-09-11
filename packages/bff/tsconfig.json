@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "lib": ["es2021"],
+    "target": "es2021",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@test-utils/*": ["test/test-utils/*"],
+      "@perms/*": ["perms/*"],
+      "@bff/adapters": ["node_modules/@bff/core/dist/adapters"],
+      "@bff/config": ["node_modules/@bff/core/dist/config"],
+      "@bff/domain/*": ["node_modules/@bff/core/dist/domain/*"],
+      "@bff/graphql/*": ["node_modules/@bff/core/dist/graphql/*"],
+      "@bff/helpers": ["node_modules/@bff/core/dist/helpers"],
+      "@bff/logger": ["node_modules/@bff/core/dist/logger"],
+      "@bff/middlewares": ["node_modules/@bff/core/dist/middlewares"],
+      "@bff/models/*": ["node_modules/@bff/core/dist/models/*"],
+      "@bff/storage/*": ["node_modules/@bff/core/dist/storage/*"],
+      "@bff/utils": ["node_modules/@bff/core/dist/utils"]
+    }
+  }
+}

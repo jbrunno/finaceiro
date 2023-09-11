@@ -1,0 +1,549 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render ClienteContatosTelefoneTable 1`] = `
+.emotion-0 {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.emotion-1 {
+  display: table;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.emotion-1 caption {
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  letter-spacing: 0.0094rem;
+  font-family: Lato,sans-serif;
+  padding: 1rem;
+  color: #3B3B4199;
+  text-align: left;
+  caption-side: bottom;
+}
+
+.emotion-2 {
+  display: table-header-group;
+}
+
+.emotion-3 {
+  display: table-row-group;
+}
+
+.emotion-5 {
+  color: inherit;
+  display: table-row;
+  vertical-align: middle;
+  outline: 0;
+}
+
+.emotion-5.MuiTableRow-hover:hover {
+  background-color: #0000000A;
+}
+
+.emotion-5.Mui-selected {
+  background-color: rgba(74, 49, 255, 0.08);
+}
+
+.emotion-5.Mui-selected:hover {
+  background-color: rgba(74, 49, 255, 0.12);
+}
+
+.emotion-5:hover {
+  background-color: #0000000A;
+}
+
+.emotion-7 {
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  letter-spacing: 0.0094rem;
+  font-family: Lato,sans-serif;
+  display: table-cell;
+  vertical-align: inherit;
+  border-bottom: 1px solid rgba(224, 224, 224, 1);
+  text-align: left;
+  padding: 16px;
+  color: #3B3B41DE;
+  max-width: 150px;
+  padding: 0.875rem;
+}
+
+.emotion-10 {
+  margin: 0;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  letter-spacing: 0.0106rem;
+  font-family: Lato,sans-serif;
+  color: #3B3B4199;
+}
+
+.emotion-11 {
+  margin: 0;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.0094rem;
+  font-family: Lato,sans-serif;
+}
+
+.emotion-13 {
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  letter-spacing: 0.0094rem;
+  font-family: Lato,sans-serif;
+  display: table-cell;
+  vertical-align: inherit;
+  border-bottom: 1px solid rgba(224, 224, 224, 1);
+  text-align: left;
+  padding: 16px;
+  color: #3B3B41DE;
+  max-width: 150px;
+  padding: 0.875rem;
+  min-width: calc(7.874999999999999rem + 54px);
+}
+
+.emotion-14 {
+  margin: 0;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  letter-spacing: 0.0063rem;
+  font-family: Lato,sans-serif;
+  color: #4A31FF;
+}
+
+.emotion-15 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.emotion-16 {
+  padding: 0;
+}
+
+.emotion-19 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0;
+  margin: 0;
+  border-radius: 0;
+  padding: 0;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  font-size: 1.5rem;
+  padding: 8px;
+  border-radius: 50%;
+  overflow: visible;
+  color: #0000008A;
+  -webkit-transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  color: #4A31FF;
+  padding: 5px;
+  font-size: 1.125rem;
+  padding: 0;
+}
+
+.emotion-19::-moz-focus-inner {
+  border-style: none;
+}
+
+.emotion-19.Mui-disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+@media print {
+  .emotion-19 {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+}
+
+.emotion-19:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+@media (hover: none) {
+  .emotion-19:hover {
+    background-color: transparent;
+  }
+}
+
+.emotion-19:hover {
+  background-color: rgba(74, 49, 255, 0.04);
+}
+
+@media (hover: none) {
+  .emotion-19:hover {
+    background-color: transparent;
+  }
+}
+
+.emotion-19.Mui-disabled {
+  background-color: transparent;
+  color: #00000042;
+}
+
+.emotion-21 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  font-size: 1.5rem;
+  font-size: 1rem;
+}
+
+.emotion-22 {
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: inherit;
+}
+
+.emotion-23 .Toastify__toast-container {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.emotion-23 .Toastify__toast-body {
+  padding-right: 0.5rem;
+}
+
+.emotion-23 .Toastify__toast--default {
+  background: #757575;
+  color: #fff;
+}
+
+.emotion-23 .Toastify__toast--info {
+  background: #2196F3;
+  color: #fff;
+}
+
+.emotion-23 .Toastify__toast--success {
+  background: #4CAF50;
+  color: #fff;
+}
+
+.emotion-23 .Toastify__toast--warning {
+  background: #FF9800;
+  color: #fff;
+}
+
+.emotion-23 .Toastify__toast--error {
+  background: #F44336;
+  color: #fff;
+}
+
+.emotion-23 .Toastify__progress-bar {
+  background: #fff9;
+}
+
+.emotion-25 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  font-size: 1.5rem;
+  color: #faaf00;
+  cursor: pointer;
+  text-align: left;
+  -webkit-tap-highlight-color: transparent;
+  pointer-events: none;
+}
+
+.emotion-25.Mui-disabled {
+  opacity: 0.38;
+  pointer-events: none;
+}
+
+.emotion-25.Mui-focusVisible .MuiRating-iconActive {
+  outline: 1px solid #999;
+}
+
+.emotion-25 .MuiRating-visuallyHidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.emotion-26 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  pointer-events: none;
+}
+
+.emotion-27 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  font-size: inherit;
+}
+
+.emotion-34 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  font-size: 1.5rem;
+}
+
+<div>
+  <div
+    class="MuiTableContainer-root emotion-0"
+  >
+    <table
+      class="MuiTable-root MuiTable-stickyHeader emotion-1"
+    >
+      <thead
+        class="MuiTableHead-root emotion-2"
+      />
+      <tbody
+        class="MuiTableBody-root emotion-3"
+      >
+        <tr
+          class="MuiTableRow-root emotion-4 emotion-5"
+        >
+          <td
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium emotion-6 emotion-7"
+          >
+            <div
+              class="MuiBox-root emotion-8"
+            >
+              <span
+                class="MuiTypography-root MuiTypography-caption emotion-9 emotion-10"
+              >
+                Filho(a)
+              </span>
+              <p
+                class="MuiTypography-root MuiTypography-body1 emotion-11"
+              >
+                teste
+              </p>
+            </div>
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium emotion-12 emotion-13"
+          >
+            <h6
+              class="MuiTypography-root MuiTypography-subtitle2 emotion-14"
+            />
+            <div
+              class="MuiGrid-root MuiGrid-container emotion-15"
+            >
+              <div
+                aria-label="Copiar telefone"
+                class="emotion-16 emotion-17"
+                data-mui-internal-clone-element="true"
+              >
+                <button
+                  class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeSmall emotion-18 emotion-19"
+                  tabindex="0"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium emotion-20 emotion-21"
+                    data-testid="FileCopyIcon"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm-1 4 6 6v10c0 1.1-.9 2-2 2H7.99C6.89 23 6 22.1 6 21l.01-14c0-1.1.89-2 1.99-2h7zm-1 7h5.5L14 6.5V12z"
+                    />
+                  </svg>
+                  <span
+                    class="MuiTouchRipple-root emotion-22"
+                  />
+                </button>
+              </div>
+              <div
+                class="emotion-23 emotion-24"
+              >
+                <div
+                  class="Toastify"
+                />
+              </div>
+              <div
+                aria-label="Excelente"
+                class=""
+                data-mui-internal-clone-element="true"
+              >
+                <span
+                  aria-label="3 Stars"
+                  class="MuiRating-root MuiRating-sizeMedium Mui-readOnly MuiRating-readOnly emotion-25"
+                  role="img"
+                >
+                  <span>
+                    <span
+                      class="MuiRating-icon MuiRating-iconFilled emotion-26"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit emotion-27"
+                        data-testid="StarIcon"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                  <span>
+                    <span
+                      class="MuiRating-icon MuiRating-iconFilled emotion-26"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit emotion-27"
+                        data-testid="StarIcon"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                  <span>
+                    <span
+                      class="MuiRating-icon MuiRating-iconFilled emotion-26"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit emotion-27"
+                        data-testid="StarIcon"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium emotion-6 emotion-7"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium emotion-34"
+              data-testid="WhatsAppIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M16.75 13.96c.25.13.41.2.46.3.06.11.04.61-.21 1.18-.2.56-1.24 1.1-1.7 1.12-.46.02-.47.36-2.96-.73-2.49-1.09-3.99-3.75-4.11-3.92-.12-.17-.96-1.38-.92-2.61.05-1.22.69-1.8.95-2.04.24-.26.51-.29.68-.26h.47c.15 0 .36-.06.55.45l.69 1.87c.06.13.1.28.01.44l-.27.41-.39.42c-.12.12-.26.25-.12.5.12.26.62 1.09 1.32 1.78.91.88 1.71 1.17 1.95 1.3.24.14.39.12.54-.04l.81-.94c.19-.25.35-.19.58-.11l1.67.88M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10c-1.97 0-3.8-.57-5.35-1.55L2 22l1.55-4.65A9.969 9.969 0 0 1 2 12 10 10 0 0 1 12 2m0 2a8 8 0 0 0-8 8c0 1.72.54 3.31 1.46 4.61L4.5 19.5l2.89-.96A7.95 7.95 0 0 0 12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8z"
+              />
+            </svg>
+          </td>
+        </tr>
+        <tr
+          class="MuiTableRow-root emotion-4 emotion-5"
+        />
+      </tbody>
+    </table>
+  </div>
+</div>
+`;

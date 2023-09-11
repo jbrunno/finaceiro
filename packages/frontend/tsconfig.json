@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@frontend/components": ["node_modules/@frontend/core/dist/components"],
+      "@frontend/icons": ["node_modules/@frontend/core/dist/icons"],
+      "@frontend/styles": ["node_modules/@frontend/core/dist/styles"],
+      "@frontend/hooks": ["node_modules/@frontend/core/dist/hooks"],
+      "@frontend/helpers": ["node_modules/@frontend/core/dist/helpers"],
+      "@frontend/middlewares": ["node_modules/@frontend/core/dist/middlewares"],
+      "@frontend/state": ["node_modules/@frontend/core/dist/state"],
+      "@frontend/api": ["node_modules/@frontend/core/dist/api"],
+      "@frontend/constants": ["node_modules/@frontend/core/dist/constants"],
+      "@frontend/types": ["node_modules/@frontend/core/dist/types"],
+      "@frontend/utils": ["node_modules/@frontend/core/dist/utils"],
+      "@frontend/contexts": ["node_modules/@frontend/core/dist/contexts"],
+      "@frontend/contexts/*": ["node_modules/@frontend/core/dist/contexts/*"],
+      "@frontend/assets/*": ["node_modules/@frontend/core/dist/assets/*"],
+      "@test-utils/*": ["test/test-utils/*"]
+    }
+  }
+}

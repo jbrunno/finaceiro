@@ -1,0 +1,10 @@
+import '@pothos/core';
+import '@pothos/plugin-relay';
+import '@pothos/plugin-errors';
+import '@pothos/plugin-with-input';
+import '@pothos/plugin-scope-auth';
+import '@pothos/plugin-simple-objects';
+import '@pothos/plugin-tracing';
+import '@pothos/plugin-validation';
+import '@pothos/plugin-mocks';
+import '@pothos/plugin-complexity';

@@ -1,0 +1,8 @@
+{
+  "material-icon-theme.files.associations": {
+    "*.mock.ts": "test-ts"
+  },
+  "material-icon-theme.folders.associations": {
+    ".e2e": "test"
+  }
+}

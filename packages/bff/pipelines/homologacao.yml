@@ -1,0 +1,31 @@
+variables:
+- group: crm-internal-dev-services
+
+name: $(Date:yyyyMMdd)$(Rev:.r)
+
+trigger:
+  paths:
+    include:
+      - packages/bff/*
+  branches:
+    include:
+      - develop
+  tags:
+    exclude:
+      - '*'
+
+pool:
+  name: aks-pool-frontend
+
+resources:
+  repositories:
+  - repository: plataforma
+    type: git
+    name: plataforma
+
+extends:
+  template: pipelines/frontend/bff/frontend-bff-cd-homologacao2.yaml@plataforma
+  parameters:
+    sourceBranch: '$(Build.SourceBranch)' 
+    sourceVersion: '$(Build.SourceVersion)'
+    tls_secret: $(TLS_SECRET)

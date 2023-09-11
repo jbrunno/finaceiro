@@ -1,0 +1,939 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render DashboardAcordosPeriodo 1`] = `
+.emotion-3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  grid-template-areas: 'content avatar action';
+  padding: 0.5rem 0rem;
+}
+
+.emotion-3 .MuiCardHeader-content {
+  grid-area: content;
+}
+
+.emotion-3 .MuiCardHeader-avatar {
+  margin-right: 0;
+  margin-left: 0.5rem;
+  grid-area: avatar;
+}
+
+.emotion-3 .MuiCardHeader-avatar>div {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-3 .MuiCardHeader-action {
+  grid-area: action;
+  margin: auto;
+}
+
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin-right: 16px;
+}
+
+.emotion-5 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  font-size: 1.5rem;
+}
+
+.emotion-6 {
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.emotion-7 {
+  margin: 0;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  letter-spacing: 0.0094rem;
+  font-family: Lato,sans-serif;
+  display: block;
+}
+
+.emotion-8 {
+  display: grid;
+  -webkit-column-gap: 0.25rem;
+  column-gap: 0.25rem;
+  white-space: nowrap;
+  grid-template-columns: auto 1fr;
+  -webkit-align-items: baseline;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+}
+
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-column-gap: 0.25rem;
+  column-gap: 0.25rem;
+}
+
+.emotion-12 {
+  margin: 0;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  letter-spacing: 0.0063rem;
+  font-family: Lato,sans-serif;
+  color: #3B3B4199;
+}
+
+.emotion-15 {
+  background-color: #fff;
+  color: #3B3B41DE;
+  -webkit-transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-radius: 4px;
+  box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
+  overflow: hidden;
+  overflow: visible;
+  border-radius: 0.5rem;
+  box-shadow: 0px 2px 4px -1px rgba(233, 233, 233, 0.8),0px 4px 5px rgba(233, 233, 233, 0.14),0px 1px 10px rgba(233, 233, 233, 0.12);
+  background-color: #fff;
+  height: calc(10.674999999999999rem + 73.2px);
+}
+
+.emotion-17 {
+  padding: 16px;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  padding: 1.5rem 2.5rem;
+}
+
+.emotion-17:last-child {
+  padding-bottom: 24px;
+}
+
+.emotion-18 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.emotion-20 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  vertical-align: top;
+}
+
+.emotion-21 {
+  color: #3B3B4199;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.4375em;
+  letter-spacing: 0.0094rem;
+  font-family: Lato,sans-serif;
+  padding: 0;
+  position: relative;
+  display: block;
+  transform-origin: top left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(133% - 32px);
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-transform: translate(14px, -9px) scale(0.75);
+  -moz-transform: translate(14px, -9px) scale(0.75);
+  -ms-transform: translate(14px, -9px) scale(0.75);
+  transform: translate(14px, -9px) scale(0.75);
+  -webkit-transition: color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms,-webkit-transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms,max-width 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+  transition: color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms,transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms,max-width 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+  z-index: 1;
+  pointer-events: auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-21.Mui-focused {
+  color: #4A31FF;
+}
+
+.emotion-21.Mui-disabled {
+  color: #3B3B4161;
+}
+
+.emotion-21.Mui-error {
+  color: #F44336;
+}
+
+.emotion-22 {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.4375em;
+  letter-spacing: 0.0094rem;
+  font-family: Lato,sans-serif;
+  color: #3B3B41DE;
+  box-sizing: border-box;
+  position: relative;
+  cursor: text;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  border-radius: 4px;
+}
+
+.emotion-22.Mui-disabled {
+  color: #3B3B4161;
+  cursor: default;
+}
+
+.emotion-22:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #3B3B41DE;
+}
+
+@media (hover: none) {
+  .emotion-22:hover .MuiOutlinedInput-notchedOutline {
+    border-color: rgba(0, 0, 0, 0.23);
+  }
+}
+
+.emotion-22.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #4A31FF;
+  border-width: 2px;
+}
+
+.emotion-22.Mui-error .MuiOutlinedInput-notchedOutline {
+  border-color: #F44336;
+}
+
+.emotion-22.Mui-disabled .MuiOutlinedInput-notchedOutline {
+  border-color: #00000042;
+}
+
+.emotion-23 {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font: inherit;
+  letter-spacing: inherit;
+  color: currentColor;
+  padding: 4px 0 5px;
+  border: 0;
+  box-sizing: content-box;
+  background: none;
+  height: 1.4375em;
+  margin: 0;
+  -webkit-tap-highlight-color: transparent;
+  display: block;
+  min-width: 0;
+  width: 100%;
+  -webkit-animation-name: mui-auto-fill-cancel;
+  animation-name: mui-auto-fill-cancel;
+  -webkit-animation-duration: 10ms;
+  animation-duration: 10ms;
+  padding-top: 1px;
+  padding: 8.5px 14px;
+}
+
+.emotion-23:focus {
+  border-radius: 4px;
+}
+
+.emotion-23::-ms-expand {
+  display: none;
+}
+
+.emotion-23.Mui-disabled {
+  cursor: default;
+}
+
+.emotion-23[multiple] {
+  height: auto;
+}
+
+.emotion-23:not([multiple]) option,
+.emotion-23:not([multiple]) optgroup {
+  background-color: #fff;
+}
+
+.emotion-23.emotion-23.emotion-23 {
+  padding-right: 32px;
+}
+
+.emotion-23.MuiSelect-select {
+  height: auto;
+  min-height: 1.4375em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.emotion-23::-webkit-input-placeholder {
+  color: currentColor;
+  opacity: 0.42;
+  -webkit-transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.emotion-23::-moz-placeholder {
+  color: currentColor;
+  opacity: 0.42;
+  -webkit-transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.emotion-23:-ms-input-placeholder {
+  color: currentColor;
+  opacity: 0.42;
+  -webkit-transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.emotion-23::-ms-input-placeholder {
+  color: currentColor;
+  opacity: 0.42;
+  -webkit-transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.emotion-23:focus {
+  outline: 0;
+}
+
+.emotion-23:invalid {
+  box-shadow: none;
+}
+
+.emotion-23::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+label[data-shrink=false]+.MuiInputBase-formControl .emotion-23::-webkit-input-placeholder {
+  opacity: 0!important;
+}
+
+label[data-shrink=false]+.MuiInputBase-formControl .emotion-23::-moz-placeholder {
+  opacity: 0!important;
+}
+
+label[data-shrink=false]+.MuiInputBase-formControl .emotion-23:-ms-input-placeholder {
+  opacity: 0!important;
+}
+
+label[data-shrink=false]+.MuiInputBase-formControl .emotion-23::-ms-input-placeholder {
+  opacity: 0!important;
+}
+
+label[data-shrink=false]+.MuiInputBase-formControl .emotion-23:focus::-webkit-input-placeholder {
+  opacity: 0.42;
+}
+
+label[data-shrink=false]+.MuiInputBase-formControl .emotion-23:focus::-moz-placeholder {
+  opacity: 0.42;
+}
+
+label[data-shrink=false]+.MuiInputBase-formControl .emotion-23:focus:-ms-input-placeholder {
+  opacity: 0.42;
+}
+
+label[data-shrink=false]+.MuiInputBase-formControl .emotion-23:focus::-ms-input-placeholder {
+  opacity: 0.42;
+}
+
+.emotion-23.Mui-disabled {
+  opacity: 1;
+  -webkit-text-fill-color: #3B3B4161;
+}
+
+.emotion-23:-webkit-autofill {
+  -webkit-animation-duration: 5000s;
+  animation-duration: 5000s;
+  -webkit-animation-name: mui-auto-fill;
+  animation-name: mui-auto-fill;
+}
+
+.emotion-23:-webkit-autofill {
+  border-radius: inherit;
+}
+
+.emotion-24 {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.emotion-25 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  font-size: 1.5rem;
+  position: absolute;
+  right: 7px;
+  top: calc(50% - .5em);
+  pointer-events: none;
+  color: #0000008A;
+}
+
+.emotion-25.Mui-disabled {
+  color: #00000042;
+}
+
+.emotion-26 {
+  text-align: left;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  top: -5px;
+  left: 0;
+  margin: 0;
+  padding: 0 8px;
+  pointer-events: none;
+  border-radius: inherit;
+  border-style: solid;
+  border-width: 1px;
+  overflow: hidden;
+  min-width: 0%;
+  border-color: rgba(0, 0, 0, 0.23);
+}
+
+.emotion-27 {
+  float: unset;
+  width: auto;
+  overflow: hidden;
+  display: block;
+  padding: 0;
+  height: 11px;
+  font-size: 0.75em;
+  visibility: hidden;
+  max-width: 100%;
+  -webkit-transition: max-width 100ms cubic-bezier(0.0, 0, 0.2, 1) 50ms;
+  transition: max-width 100ms cubic-bezier(0.0, 0, 0.2, 1) 50ms;
+  white-space: nowrap;
+}
+
+.emotion-27>span {
+  padding-left: 5px;
+  padding-right: 5px;
+  display: inline-block;
+  opacity: 0;
+  visibility: visible;
+}
+
+.emotion-28 {
+  gap: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-30 {
+  margin: 0;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  letter-spacing: 0.0094rem;
+  font-family: Lato,sans-serif;
+  color: #3B3B4199;
+}
+
+.emotion-31 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.emotion-33 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.8125rem;
+  letter-spacing: 0;
+  font-family: Lato,sans-serif;
+}
+
+.emotion-34 {
+  margin: 0;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  letter-spacing: 0.0063rem;
+  font-family: Lato,sans-serif;
+}
+
+.emotion-40 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.0094rem;
+  font-family: Lato,sans-serif;
+}
+
+.emotion-49 {
+  display: grid;
+}
+
+.emotion-51 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.emotion-53 {
+  margin: 0;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.0094rem;
+  font-family: Lato,sans-serif;
+  color: #3B3B4199;
+}
+
+.emotion-54 {
+  position: relative;
+  border-radius: calc(0.175rem + 1.2px);
+  padding: 0.1875rem 0.5625rem;
+}
+
+.emotion-57 {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  height: 4px;
+  z-index: 0;
+  background-color: rgb(170, 215, 250);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: calc(0.175rem + 1.2px);
+}
+
+@media print {
+  .emotion-57 {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+}
+
+.emotion-57.MuiLinearProgress-colorInfo {
+  background-color: #f5f5f5;
+}
+
+.emotion-57 .MuiLinearProgress-barColorInfo {
+  background-color: #0b79d0;
+}
+
+.emotion-58 {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  -webkit-transition: -webkit-transform .4s linear;
+  transition: transform .4s linear;
+  transform-origin: left;
+  background-color: #2196F3;
+}
+
+.emotion-60 {
+  margin: 0;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  letter-spacing: 0.0063rem;
+  font-family: Lato,sans-serif;
+  z-index: 1;
+  position: relative;
+  text-shadow: 1px 1px 1px #fff;
+  color: #0b79d0;
+}
+
+.emotion-60.active {
+  text-shadow: none;
+  color: #fff;
+}
+
+<div>
+  <div
+    class="MuiBox-root emotion-0"
+  >
+    <div
+      class="MuiCardHeader-root emotion-1 emotion-2 emotion-3"
+    >
+      <div
+        class="MuiCardHeader-avatar emotion-4"
+      >
+        <div
+          aria-label="Produção: Referente aos seus acordos"
+          class=""
+          data-mui-internal-clone-element="true"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium emotion-5"
+            data-testid="HelpOutlineIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="MuiCardHeader-content emotion-6"
+      >
+        <span
+          class="MuiTypography-root MuiTypography-body2 MuiCardHeader-title emotion-7"
+        >
+          <div
+            class="emotion-8 emotion-9"
+          >
+            <div
+              class="emotion-10 emotion-11"
+            >
+              Produção
+            </div>
+            <h6
+              class="MuiTypography-root MuiTypography-subtitle2 emotion-12"
+            >
+              (Acordos)
+            </h6>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root emotion-13 emotion-14 emotion-15"
+    >
+      <div
+        class="MuiCardContent-root emotion-16 emotion-17"
+      >
+        <div
+          class="emotion-18 emotion-160"
+        >
+          <div
+            class="MuiFormControl-root MuiTextField-root emotion-20"
+            style="grid-column: span 12;"
+          >
+            <label
+              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeSmall MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeSmall MuiInputLabel-outlined emotion-21"
+              data-shrink="true"
+              for=":r1:"
+              id=":r1:-label"
+            >
+              Período
+            </label>
+            <div
+              class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-sizeSmall emotion-22"
+            >
+              <div
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                aria-labelledby=":r1:-label :r1:"
+                class="MuiSelect-select MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall emotion-23"
+                id=":r1:"
+                role="button"
+                tabindex="0"
+              >
+                Mês atual (até hoje)
+              </div>
+              <input
+                aria-hidden="true"
+                aria-invalid="false"
+                class="MuiSelect-nativeInput emotion-24"
+                tabindex="-1"
+                value="2023-05-01T03:00:00.000Z"
+              />
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined emotion-25"
+                data-testid="ArrowDropDownIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M7 10l5 5 5-5z"
+                />
+              </svg>
+              <fieldset
+                aria-hidden="true"
+                class="MuiOutlinedInput-notchedOutline emotion-26"
+              >
+                <legend
+                  class="emotion-27"
+                >
+                  <span>
+                    Período
+                  </span>
+                </legend>
+              </fieldset>
+            </div>
+          </div>
+          <div
+            class="emotion-28 emotion-29"
+            style="grid-column: span 12;"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body2 emotion-30"
+            >
+              Total de acordos no período
+            </p>
+            <div
+              class="emotion-31 emotion-32"
+            >
+              <h3
+                class="MuiTypography-root MuiTypography-h3 emotion-33"
+              >
+                3
+              </h3>
+              <h6
+                class="MuiTypography-root MuiTypography-subtitle2 emotion-34"
+              >
+                acordos
+              </h6>
+            </div>
+          </div>
+          <div
+            class="emotion-28 emotion-29"
+            style="grid-column: span 6;"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body2 emotion-30"
+            >
+              Valor gerado no período
+            </p>
+            <div
+              class="emotion-31 emotion-32"
+            >
+              <h6
+                class="MuiTypography-root MuiTypography-subtitle1 emotion-40"
+              >
+                R$
+              </h6>
+              <h3
+                class="MuiTypography-root MuiTypography-h3 emotion-33"
+              >
+                5,00
+              </h3>
+            </div>
+          </div>
+          <div
+            class="emotion-28 emotion-29"
+            style="grid-column: span 6;"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body2 emotion-30"
+            >
+              Valor pago no período
+            </p>
+            <div
+              class="emotion-31 emotion-32"
+            >
+              <h6
+                class="MuiTypography-root MuiTypography-subtitle1 emotion-40"
+              >
+                R$
+              </h6>
+              <h3
+                class="MuiTypography-root MuiTypography-h3 emotion-33"
+              >
+                6,00
+              </h3>
+            </div>
+          </div>
+        </div>
+        <div
+          class="emotion-49 emotion-50"
+        >
+          <div
+            class="emotion-51 emotion-52"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body1 emotion-53"
+            >
+              Acordos pagos
+            </p>
+            <div
+              class="emotion-54 emotion-55"
+            >
+              <span
+                aria-valuemax="100"
+                aria-valuemin="0"
+                aria-valuenow="33"
+                class="MuiLinearProgress-root MuiLinearProgress-colorInfo MuiLinearProgress-determinate emotion-56 emotion-57"
+                role="progressbar"
+              >
+                <span
+                  class="MuiLinearProgress-bar MuiLinearProgress-barColorInfo MuiLinearProgress-bar1Determinate emotion-58"
+                  style="transform: translateX(-66.66666666666666%);"
+                />
+              </span>
+              <h6
+                class="MuiTypography-root MuiTypography-subtitle2 active emotion-59 emotion-60"
+              >
+                3
+              </h6>
+            </div>
+          </div>
+          <div
+            class="emotion-51 emotion-52"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body1 emotion-53"
+            >
+              Acordos quebrados
+            </p>
+            <div
+              class="emotion-54 emotion-55"
+            >
+              <span
+                aria-valuemax="100"
+                aria-valuemin="0"
+                aria-valuenow="33"
+                class="MuiLinearProgress-root MuiLinearProgress-colorInfo MuiLinearProgress-determinate emotion-56 emotion-57"
+                role="progressbar"
+              >
+                <span
+                  class="MuiLinearProgress-bar MuiLinearProgress-barColorInfo MuiLinearProgress-bar1Determinate emotion-58"
+                  style="transform: translateX(-66.66666666666666%);"
+                />
+              </span>
+              <h6
+                class="MuiTypography-root MuiTypography-subtitle2 active emotion-59 emotion-60"
+              >
+                3
+              </h6>
+            </div>
+          </div>
+          <div
+            class="emotion-51 emotion-52"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body1 emotion-53"
+            >
+              Acordos com parcelas a vencer
+            </p>
+            <div
+              class="emotion-54 emotion-55"
+            >
+              <span
+                aria-valuemax="100"
+                aria-valuemin="0"
+                aria-valuenow="33"
+                class="MuiLinearProgress-root MuiLinearProgress-colorInfo MuiLinearProgress-determinate emotion-56 emotion-57"
+                role="progressbar"
+              >
+                <span
+                  class="MuiLinearProgress-bar MuiLinearProgress-barColorInfo MuiLinearProgress-bar1Determinate emotion-58"
+                  style="transform: translateX(-66.66666666666666%);"
+                />
+              </span>
+              <h6
+                class="MuiTypography-root MuiTypography-subtitle2 active emotion-59 emotion-60"
+              >
+                3
+              </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
